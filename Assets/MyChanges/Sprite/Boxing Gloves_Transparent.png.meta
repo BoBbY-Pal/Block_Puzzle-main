@@ -1,0 +1,1400 @@
+fileFormatVersion: 2
+guid: dfb3e08482fefba4582655f7711f2dc4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_0
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 2494
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0850d64637e43489d384feee04ea9e
+      internalID: 732733789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_1
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 2534
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03be812960f49be4ca78d1ad4777eac7
+      internalID: 131490142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_2
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 2494
+        width: 50
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a7fbb1dec0dbb4fbb11eeb3da2dc32
+      internalID: -1490885972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_3
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 2494
+        width: 12
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7373c93e933ded94188ddce2a72a3f64
+      internalID: -887429835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_4
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 2494
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832f95e82f85f5243a164da43d8d22c0
+      internalID: 783808734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_5
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 2494
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35fcd93918fabc429aa893f31e81d7c
+      internalID: 1438115508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_6
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 2494
+        width: 12
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da42c57ba64e2b42824fa8a9ece3df6
+      internalID: 211541930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_7
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 2494
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20d73ed22a43424d9cd7616c91475ad
+      internalID: -1789611965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_8
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 2480
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be78f394d357be4695f9095b3ba9b08
+      internalID: -103112676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_9
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 2494
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0c5f74bd40a51499a7e555754d49a6
+      internalID: -1507229164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_10
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 2494
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3441df3924fca4a9da5fb01d8a0e5b
+      internalID: -1229297908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_11
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 2494
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47400b0e57eda3f418923be2aaae1966
+      internalID: 812113926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_12
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1777
+        width: 643
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb53133391047964dac3a66f08d2d29a
+      internalID: 1685578535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_13
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1777
+        width: 644
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ed875039e0c7c4db7b357cca5765fc
+      internalID: -933664045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_14
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1777
+        width: 642
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4432903e529cc9458c3857d634d843a
+      internalID: 739338560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_15
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 1777
+        width: 643
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c565c06664dd74eb0276196d71c481
+      internalID: -860510934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1639
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60801c5b8dbe8b6488583afc4e4e227b
+      internalID: -1837747718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_17
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1639
+        width: 14
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b803074150b8d1f49922cf7cbb280bc7
+      internalID: 1131692772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_18
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1639
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0117c060310508d4ca345b474aedb7ac
+      internalID: 2038311019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_19
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1639
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88819f6e691d084d9923614914ab726
+      internalID: -827305996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_20
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 1639
+        width: 12
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98dec48a891b3c8499bca8f11378d3c6
+      internalID: -1553088543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_21
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 1639
+        width: 26
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8ee4a8d4a247146be40d8fc85be0e5
+      internalID: -743924086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_22
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 1639
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee994608dea1d849be17b23623d16ac
+      internalID: -1228575697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_23
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1639
+        width: 13
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc29dac04b52d0d448d89eddb4f85c06
+      internalID: 488465972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_24
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1639
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922fc1f1d2fe332448e0f7ed2eafb85b
+      internalID: -470307634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_25
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 1639
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf8c492ce337354581f8c657171d372
+      internalID: -620495372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_26
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 1679
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4abc10c8149bc30408bf8e29807b450f
+      internalID: 1559181909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_27
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 1639
+        width: 12
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f4d5ece0419fb42b6bfebd8b905303
+      internalID: -1077015122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_28
+      rect:
+        serializedVersion: 2
+        x: 2419
+        y: 1639
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3d5a55d244de24a8e8382e2ef56749
+      internalID: -606331413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_29
+      rect:
+        serializedVersion: 2
+        x: 2576
+        y: 1639
+        width: 12
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9428a4303ea99fa4e856242d8c47899a
+      internalID: -1219718696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_30
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1639
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5bdf38cf1413ae4a9b5a12a0c707b37
+      internalID: -800643885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_31
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1639
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d9693bec23d1f489a691924f0bd7d9
+      internalID: 1355631261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_32
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1639
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dc180819d0feb4fb014b12c49a95cc
+      internalID: -1117234792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_33
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1639
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca0e11d59330984887ea6eebd5f6db1
+      internalID: 481929136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_34
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 1639
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae9d256e8b86964f826fd949775638d
+      internalID: -1121692454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_35
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1639
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e4a8be2b9f86c428b5f3700e0e3415
+      internalID: 1163672367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_36
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1639
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e99a78774dfddc4e822278640e16c4a
+      internalID: -568231691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_37
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1639
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8129bbb9c60a2aa43a6906f389ca4c4a
+      internalID: 1095668131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_38
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 1639
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76b5afe3a695fb4e9b16252c26e7bb4
+      internalID: 1266807654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_39
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 1639
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d75ef7200218a74db548535f3f6981e
+      internalID: -1946388971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_40
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 1639
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58fc26a84c42eb4fb23c697963da739
+      internalID: -1978694611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_41
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 1639
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ef612725a3ced439f07d36d7452b8a
+      internalID: 191037450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_42
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 1639
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335da83f6f22de244b5cbeb840d23627
+      internalID: -1185379327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_43
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 1639
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5c1ec29f5c43a43bbc447ea551c316
+      internalID: -587263509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_44
+      rect:
+        serializedVersion: 2
+        x: 2533
+        y: 1639
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47012bcf1bd5194f880b385cc03ad88
+      internalID: 1640875761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_45
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 926
+        width: 185
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754e3ef76e578f341ba34142ac1248f8
+      internalID: -200657550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_46
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 925
+        width: 187
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bba84966900664381e76545c81faa2
+      internalID: -1818310432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_47
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 954
+        width: 1247
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a302f1723b5004a8a6e1c719a098bf
+      internalID: 1043944877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_48
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 1195
+        width: 134
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6292116ae08d73545a91f476f66e10de
+      internalID: -703487250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_49
+      rect:
+        serializedVersion: 2
+        x: 2379
+        y: 1154
+        width: 110
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6389ed38b8e16da429f5c05afd14186e
+      internalID: -1963079400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_50
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 893
+        width: 134
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7368e950de17a5478f1ab2a88318841
+      internalID: -880543635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_51
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 484
+        width: 2437
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ff7ca2d6fad59449449dbfa13afbe3
+      internalID: 1188267871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_52
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 53
+        width: 363
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9563716711453144bd1f8d7cf426be5
+      internalID: -1718820659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_53
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 53
+        width: 363
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e25393a3bafb114eab17766b045eef9
+      internalID: 308368905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_54
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 241
+        width: 224
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ac7a3354a6d2648bf97b5b3c2c200f
+      internalID: 440732367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_55
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 206
+        width: 112
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170b43b4c8c60d54f8b835a21ca18877
+      internalID: -179934325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boxing Gloves_Transparent_56
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 8
+        width: 224
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2673b90bcd536eb439b3c8f84d53d2f8
+      internalID: -1457917427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Boxing Gloves_Transparent_55: -179934325
+      Boxing Gloves_Transparent_16: -1837747718
+      Boxing Gloves_Transparent_54: 440732367
+      Boxing Gloves_Transparent_22: -1228575697
+      Boxing Gloves_Transparent_42: -1185379327
+      Boxing Gloves_Transparent_35: 1163672367
+      Boxing Gloves_Transparent_28: -606331413
+      Boxing Gloves_Transparent_6: 211541930
+      Boxing Gloves_Transparent_25: -620495372
+      Boxing Gloves_Transparent_48: -703487250
+      Boxing Gloves_Transparent_41: 191037450
+      Boxing Gloves_Transparent_5: 1438115508
+      Boxing Gloves_Transparent_49: -1963079400
+      Boxing Gloves_Transparent_7: -1789611965
+      Boxing Gloves_Transparent_12: 1685578535
+      Boxing Gloves_Transparent_19: -827305996
+      Boxing Gloves_Transparent_14: 739338560
+      Boxing Gloves_Transparent_32: -1117234792
+      Boxing Gloves_Transparent_45: -200657550
+      Boxing Gloves_Transparent_21: -743924086
+      Boxing Gloves_Transparent_34: -1121692454
+      Boxing Gloves_Transparent_17: 1131692772
+      Boxing Gloves_Transparent_47: 1043944877
+      Boxing Gloves_Transparent_15: -860510934
+      Boxing Gloves_Transparent_24: -470307634
+      Boxing Gloves_Transparent_36: -568231691
+      Boxing Gloves_Transparent_11: 812113926
+      Boxing Gloves_Transparent_2: -1490885972
+      Boxing Gloves_Transparent_40: -1978694611
+      Boxing Gloves_Transparent_29: -1219718696
+      Boxing Gloves_Transparent_44: 1640875761
+      Boxing Gloves_Transparent_20: -1553088543
+      Boxing Gloves_Transparent_38: 1266807654
+      Boxing Gloves_Transparent_51: 1188267871
+      Boxing Gloves_Transparent_8: -103112676
+      Boxing Gloves_Transparent_26: 1559181909
+      Boxing Gloves_Transparent_18: 2038311019
+      Boxing Gloves_Transparent_50: -880543635
+      Boxing Gloves_Transparent_56: -1457917427
+      Boxing Gloves_Transparent_9: -1507229164
+      Boxing Gloves_Transparent_13: -933664045
+      Boxing Gloves_Transparent_37: 1095668131
+      Boxing Gloves_Transparent_3: -887429835
+      Boxing Gloves_Transparent_31: 1355631261
+      Boxing Gloves_Transparent_1: 131490142
+      Boxing Gloves_Transparent_46: -1818310432
+      Boxing Gloves_Transparent_0: 732733789
+      Boxing Gloves_Transparent_30: -800643885
+      Boxing Gloves_Transparent_33: 481929136
+      Boxing Gloves_Transparent_43: -587263509
+      Boxing Gloves_Transparent_27: -1077015122
+      Boxing Gloves_Transparent_4: 783808734
+      Boxing Gloves_Transparent_10: -1229297908
+      Boxing Gloves_Transparent_52: -1718820659
+      Boxing Gloves_Transparent_39: -1946388971
+      Boxing Gloves_Transparent_53: 308368905
+      Boxing Gloves_Transparent_23: 488465972
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: 6dd3a1f955c624c44a2a4faf0893b30a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Panda_SpriteAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1723
+        width: 864
+        height: 1003
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca150a2c7916494794fdd9c1916fa76
+      internalID: -156978445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda_SpriteAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 1735
+        width: 992
+        height: 1017
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b50ae56cfb1874ea40d7429b0ea4af
+      internalID: 1620047195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda_SpriteAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 1736
+        width: 994
+        height: 1016
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167dad0eda79c0246ab9669d0d0b0d7c
+      internalID: 1457978110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda_SpriteAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 328
+        width: 995
+        height: 1017
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ba174834bb39c4eab3848a8d6d593e
+      internalID: 1065245881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda_SpriteAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 330
+        width: 992
+        height: 1016
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0697bb63d7c97ab4d8dc8aa5fea63834
+      internalID: -23112309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda_SpriteAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 332
+        width: 1080
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76229033ecc44594085e27ae41ea9fb6
+      internalID: -1508470103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Panda_SpriteAtlas_54: -302649913
+      Panda_SpriteAtlas_9: -1819118667
+      Panda_SpriteAtlas_48: 1350492845
+      Panda_SpriteAtlas_50: 845923514
+      Panda_SpriteAtlas_25: 64518450
+      Panda_SpriteAtlas_40: -492260170
+      Panda_SpriteAtlas_39: 1750458673
+      Panda_SpriteAtlas_53: -938529580
+      Panda_SpriteAtlas_11: 958681284
+      Panda_SpriteAtlas_36: -971386982
+      Panda_SpriteAtlas_52: -721060205
+      Panda_SpriteAtlas_27: 1118679392
+      Panda_SpriteAtlas_34: -1798788440
+      Panda_SpriteAtlas_44: -128188056
+      Panda_SpriteAtlas_19: 1842912888
+      Panda_SpriteAtlas_16: -1250098850
+      Panda_SpriteAtlas_24: 1079094814
+      Panda_SpriteAtlas_35: 785468763
+      Panda_SpriteAtlas_17: 1801600339
+      Panda_SpriteAtlas_0: 218846908
+      Panda_SpriteAtlas_3: -278777987
+      Panda_SpriteAtlas_37: 1957950778
+      Panda_SpriteAtlas_21: -1370864320
+      Panda_SpriteAtlas_43: 1715763410
+      Panda_SpriteAtlas_45: -1088285280
+      Panda_SpriteAtlas_30: 249253472
+      Panda_SpriteAtlas_31: -23112309
+      Panda_SpriteAtlas_20: 84882791
+      Panda_SpriteAtlas_22: -1746619270
+      Panda_SpriteAtlas_5: -156978445
+      Panda_SpriteAtlas_32: -1561229262
+      Panda_SpriteAtlas_33: -1508470103
+      Panda_SpriteAtlas_4: -340783070
+      Panda_SpriteAtlas_26: -2092599183
+      Panda_SpriteAtlas_29: 1065245881
+      Panda_SpriteAtlas_42: -1645048930
+      Panda_SpriteAtlas_51: 498160383
+      Panda_SpriteAtlas_28: 102939492
+      Panda_SpriteAtlas_14: -2120484065
+      Panda_SpriteAtlas_7: 1546047299
+      Panda_SpriteAtlas_8: 1457978110
+      Panda_SpriteAtlas_49: 1442628760
+      Panda_SpriteAtlas_23: -875966533
+      Panda_SpriteAtlas_6: 1620047195
+      Panda_SpriteAtlas_2: 568227388
+      Panda_SpriteAtlas_18: -603580402
+      Panda_SpriteAtlas_10: 1033534033
+      Panda_SpriteAtlas_1: 832749513
+      Panda_SpriteAtlas_41: 620883928
+      Panda_SpriteAtlas_47: 1030010768
+      Panda_SpriteAtlas_13: -240657220
+      Panda_SpriteAtlas_46: -881240903
+      Panda_SpriteAtlas_15: 1940687363
+      Panda_SpriteAtlas_38: -1612429756
+      Panda_SpriteAtlas_12: 1410673689
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
