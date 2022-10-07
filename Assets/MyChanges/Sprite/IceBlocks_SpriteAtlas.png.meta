@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: 9ffee83301b50f048b90a210a94b4499
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IceBlocks_SpriteAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 532
+        width: 381
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0ff7733b6907545824a19fe4750a91
+      internalID: 823804407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceBlocks_SpriteAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 529
+        width: 381
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf18e88a049a014abf708c58dbe9383
+      internalID: -280803055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceBlocks_SpriteAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 529
+        width: 381
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007c9e1d9bb28aa4c81e1bef1c5dd7dc
+      internalID: 701796372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceBlocks_SpriteAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 124
+        width: 381
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644db3509ed9f2048be0560a3eb424f5
+      internalID: 1767700804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceBlocks_SpriteAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 126
+        width: 381
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab164738b76da24db4281db02b11c11
+      internalID: 61546639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceBlocks_SpriteAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 124
+        width: 375
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd744dcc1668734ba4f8a0cb8cc68f0
+      internalID: 1677523144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      IceBlocks_SpriteAtlas_27: -1026060185
+      IceBlocks_SpriteAtlas_20: 61546639
+      IceBlocks_SpriteAtlas_5: -1193917906
+      IceBlocks_SpriteAtlas_0: -1370518958
+      IceBlocks_SpriteAtlas_29: -1818464745
+      IceBlocks_SpriteAtlas_24: -1256256184
+      IceBlocks_SpriteAtlas_19: 1767700804
+      IceBlocks_SpriteAtlas_2: -626829154
+      IceBlocks_SpriteAtlas_8: 1479941242
+      IceBlocks_SpriteAtlas_9: 532976306
+      IceBlocks_SpriteAtlas_12: -1610350305
+      IceBlocks_SpriteAtlas_38: -159316011
+      IceBlocks_SpriteAtlas_34: 369526303
+      IceBlocks_SpriteAtlas_23: 685129031
+      IceBlocks_SpriteAtlas_4: -1219265708
+      IceBlocks_SpriteAtlas_6: -931763162
+      IceBlocks_SpriteAtlas_11: 461190698
+      IceBlocks_SpriteAtlas_15: -280803055
+      IceBlocks_SpriteAtlas_14: 823804407
+      IceBlocks_SpriteAtlas_21: 1677523144
+      IceBlocks_SpriteAtlas_18: 1479540996
+      IceBlocks_SpriteAtlas_26: -163337707
+      IceBlocks_SpriteAtlas_35: -882738082
+      IceBlocks_SpriteAtlas_16: 701796372
+      IceBlocks_SpriteAtlas_28: 1333703264
+      IceBlocks_SpriteAtlas_37: 1684211212
+      IceBlocks_SpriteAtlas_31: -1391235430
+      IceBlocks_SpriteAtlas_17: -1202064721
+      IceBlocks_SpriteAtlas_32: -82613329
+      IceBlocks_SpriteAtlas_33: -991869027
+      IceBlocks_SpriteAtlas_7: 1377581957
+      IceBlocks_SpriteAtlas_39: -1320229852
+      IceBlocks_SpriteAtlas_3: -1935912775
+      IceBlocks_SpriteAtlas_1: -1755509720
+      IceBlocks_SpriteAtlas_36: -35922704
+      IceBlocks_SpriteAtlas_10: 1938316115
+      IceBlocks_SpriteAtlas_13: -589421433
+      IceBlocks_SpriteAtlas_22: -135339665
+      IceBlocks_SpriteAtlas_25: 1743134699
+      IceBlocks_SpriteAtlas_30: -1937271592
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

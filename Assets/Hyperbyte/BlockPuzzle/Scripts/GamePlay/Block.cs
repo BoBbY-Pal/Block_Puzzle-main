@@ -358,6 +358,32 @@ namespace Hyperbyte
                     Clear();
                     break;
 
+                case SpriteType.Panda:
+                    if (hasStages)
+                    {
+                        if (stage > 1)
+                        {
+                            --stage;
+                            Sprite sprite = ThemeManager.Instance.GetBlockSpriteWithTag(spriteType + "Stage" + stage);
+                            blockImage.sprite = sprite;
+                            defaultSprite = sprite;
+                            assignedSpriteTag = spriteType + "Stage" + stage;
+                        }
+                        else
+                        {
+                            TargetController.Instance.UpdateTargetText(this, spriteType);
+                            hasStages = false;
+                            stage = 0;
+                            Clear();
+                        }
+                    }
+                    else
+                    {
+                        TargetController.Instance.UpdateTargetText(this, spriteType);
+                        Clear();
+                    }
+                    break;
+                
                 default:
                     TargetController.Instance.UpdateTargetText(this, spriteType);
                     Clear();
@@ -393,12 +419,13 @@ namespace Hyperbyte
                     blockLayerImage1.enabled = true;
                     PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Yellow.ToString()), spriteType.ToString());
                     break;
+                
                 case SpriteType.Panda:
                     if (hasStages)
                     {
                         this.hasStages = hasStages;
                         this.stage = stage;
-                        PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(this.spriteType.ToString()+ "Stage" + this.stage),
+                        PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()+ "Stage" + this.stage),
                                 spriteType.ToString()+ "Stage" + this.stage);
                     }
                     else
