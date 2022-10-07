@@ -92,7 +92,8 @@ namespace Hyperbyte
 #pragma warning restore 0649
 
         public SpriteType spriteType { get; private set; }
-
+        public bool hasStages = false;
+        public int stage = 0;
         /// <summary>
 		/// Awake is called when the script instance is being loaded.
 		/// </summary>
@@ -365,10 +366,9 @@ namespace Hyperbyte
         }
 
         // gets called during board generation
-        public void SetBlock(SpriteType spriteType)
+        public void SetBlock(SpriteType spriteType, bool hasStages, int stage)
         {
             this.spriteType = spriteType;
-
             switch(spriteType)
             {
                 case SpriteType.Bubble:
@@ -393,9 +393,21 @@ namespace Hyperbyte
                     blockLayerImage1.enabled = true;
                     PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Yellow.ToString()), spriteType.ToString());
                     break;
-
+                case SpriteType.Panda:
+                    if (hasStages)
+                    {
+                        this.hasStages = hasStages;
+                        this.stage = stage;
+                        PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(this.spriteType.ToString()+ "Stage" + this.stage),
+                                spriteType.ToString()+ "Stage" + this.stage);
+                    }
+                    else
+                    {
+                        PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()), spriteType.ToString());
+                    }
+                    break;
+                
                 default:
-                    
                     PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()), spriteType.ToString());
                     break;
             }

@@ -32,9 +32,9 @@ public class Target : MonoBehaviour
             case SpriteType.Bird:
                 this.spriteType = SpriteType.Hat;
                 break;
-            case SpriteType.Panda:
-                this.spriteType = SpriteType.PandaLevel1;
-                break;
+            // case SpriteType.Panda:
+            //     this.spriteType = SpriteType.PandaLevel1;
+            //     break;
             default:
                 this.spriteType = spriteType;
                 break;

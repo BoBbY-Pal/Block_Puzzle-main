@@ -86,8 +86,11 @@ namespace Hyperbyte
                     #region Level Modification - My Changes
                     if (activeLevel.rows[row].coloum[column].spriteType != SpriteType.Empty)
                     {
+                        bool hasStages = activeLevel.rows[row].coloum[column].hasStages;
+                        int stage = activeLevel.rows[row].coloum[column].stage;
                         SpriteType spriteType = activeLevel.rows[row].coloum[column].spriteType;
-                        blockElement.GetComponent<Block>().SetBlock(spriteType);
+                        
+                        blockElement.GetComponent<Block>().SetBlock(spriteType, hasStages, stage);
                     }
                     #endregion
                 }

@@ -57,6 +57,9 @@ public class BlockSprite
 {
     [Space(10)]
     public SpriteType spriteType;
+
+    public bool hasStages;
+    public int stage;
 }
 
 [System.Serializable]
@@ -74,7 +77,16 @@ public enum SpriteType
     Magnet,
     Bubble,
     Panda,
-    PandaLevel1
+}
+
+[System.Serializable]
+public enum Stages
+{
+    Stage1 = 1,
+    Stage2 = 2,
+    Stage3 = 3,
+    Stage4 = 4,
+    Stage5 = 5,
 }
 
 [System.Serializable]
