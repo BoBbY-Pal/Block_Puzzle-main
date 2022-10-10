@@ -358,7 +358,46 @@ namespace Hyperbyte
                     Clear();
                     break;
 
-                case SpriteType.Panda:
+                case SpriteType.MagnetWithIceAndRed:
+                    if (hasStages)
+                    {
+                        if (stage > 1)
+                        {
+                            --stage;
+                            Sprite blockImgSprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Red.ToString());
+                            blockImage.sprite = blockImgSprite;
+                            defaultSprite = blockImgSprite;
+                            blockLayerImage1.sprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Ice + "Stage" + stage);
+                            assignedSpriteTag = spriteType + "Stage" + stage;
+                        }
+                        else
+                        {
+                            TargetController.Instance.UpdateTargetText(this, SpriteType.Ice);
+                            hasStages = false;
+                            stage = 0;
+                            blockLayerImage1.enabled = false;
+                            Sprite blockImgSprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Red.ToString());
+                            blockImage.sprite = blockImgSprite;
+                            defaultSprite = blockImgSprite;
+                            spriteType = SpriteType.Magnet;
+                            Magnet.Instance.CheckForRowOrColoumClear(_rowId, _columnId);
+                            assignedSpriteTag = spriteType.ToString();
+                        }
+                    }
+                    else
+                    {
+                        TargetController.Instance.UpdateTargetText(this, SpriteType.Ice);
+                        blockLayerImage1.enabled = false;
+                        Sprite blockImgSprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Red.ToString());
+                        blockImage.sprite = blockImgSprite;
+                        defaultSprite = blockImgSprite;
+                        spriteType = SpriteType.Magnet;
+                        Magnet.Instance.CheckForRowOrColoumClear(_rowId, _columnId);
+                        assignedSpriteTag = spriteType.ToString();
+                    }
+                    break;
+
+                default:
                     if (hasStages)
                     {
                         if (stage > 1)
@@ -383,11 +422,6 @@ namespace Hyperbyte
                         Clear();
                     }
                     break;
-                
-                default:
-                    TargetController.Instance.UpdateTargetText(this, spriteType);
-                    Clear();
-                    break;
             }
         }
 
@@ -395,6 +429,9 @@ namespace Hyperbyte
         public void SetBlock(SpriteType spriteType, bool hasStages, int stage)
         {
             this.spriteType = spriteType;
+            this.hasStages = hasStages;
+            this.stage = stage;
+            
             switch(spriteType)
             {
                 case SpriteType.Bubble:
@@ -420,22 +457,53 @@ namespace Hyperbyte
                     PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Yellow.ToString()), spriteType.ToString());
                     break;
                 
-                case SpriteType.Panda:
+                case SpriteType.MagnetWithIceAndRed:
                     if (hasStages)
                     {
-                        this.hasStages = hasStages;
-                        this.stage = stage;
+                        blockLayerImage1.sprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Ice.ToString() + "Stage" + this.stage);
+                        blockLayerImage2.sprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Magnet.ToString());
+                        blockLayerImage1.color = blockImage.color.WithNewA(1);
+                        blockLayerImage2.color = blockImage.color.WithNewA(1);
+                        blockLayerImage2.enabled = true;
+                        blockLayerImage1.enabled = true;
+                        PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Red.ToString()), spriteType.ToString());
+                    }
+                    else
+                    {
+                        blockLayerImage1.sprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Ice.ToString());
+                        blockLayerImage2.sprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Magnet.ToString());
+                        blockLayerImage1.color = blockImage.color.WithNewA(1);
+                        blockLayerImage2.color = blockImage.color.WithNewA(1);
+                        blockLayerImage2.enabled = true;
+                        blockLayerImage1.enabled = true;
+                        PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Red.ToString()), spriteType.ToString());
+                    }
+                    break;
+                
+                // case SpriteType.Panda:
+                //     if (hasStages)
+                //     {
+                //         this.hasStages = hasStages;
+                //         this.stage = stage;
+                //         PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()+ "Stage" + this.stage),
+                //                 spriteType.ToString()+ "Stage" + this.stage);
+                //     }
+                //     else
+                //     {
+                //         PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()), spriteType.ToString());
+                //     }
+                //     break;
+                
+                default:
+                    if (hasStages)
+                    {
                         PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()+ "Stage" + this.stage),
-                                spriteType.ToString()+ "Stage" + this.stage);
+                            spriteType.ToString()+ "Stage" + this.stage);
                     }
                     else
                     {
                         PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()), spriteType.ToString());
                     }
-                    break;
-                
-                default:
-                    PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()), spriteType.ToString());
                     break;
             }
         }

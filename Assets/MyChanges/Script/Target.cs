@@ -25,9 +25,9 @@ public class Target : MonoBehaviour
     {
         switch(spriteType)
         {
-            case SpriteType.Ice:
-                this.spriteType = SpriteType.RedWithIce;
-                break;
+            // case SpriteType.Ice:
+            //     this.spriteType = SpriteType.RedWithIce;
+            //     break;
 
             case SpriteType.Bird:
                 this.spriteType = SpriteType.Hat;
