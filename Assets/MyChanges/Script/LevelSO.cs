@@ -78,6 +78,8 @@ public enum SpriteType
     Bubble,
     Panda,
     MagnetWithIceAndRed,
+    Diamond,
+    
 }
 
 [System.Serializable]
