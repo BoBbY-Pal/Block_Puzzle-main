@@ -16,6 +16,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using Hyperbyte.Utils;
 using Hyperbyte.UITween;
+using MyChanges.Script;
+using Unity.VisualScripting;
 
 namespace Hyperbyte
 {
@@ -66,11 +68,14 @@ namespace Hyperbyte
         #region Blast Mode Specific
         // Whether Block contains bomb. Applied only to time mode.
         [System.NonSerialized] public bool isBomb = false;
-
+        
         // Instance on bomb on the block. 
         [System.NonSerialized] public Bomb thisBomb = null;
         #endregion
 
+        // Whether Block contains diamond.
+        [System.NonSerialized] public bool hasDiamond = false;
+        
         // Default sprite tag on the block. Will update runtime.
         public string defaultSpriteTag;
 
@@ -89,7 +94,7 @@ namespace Hyperbyte
         [SerializeField] Image blockLayerImage1;
         [SerializeField] Image blockLayerImage2;
         [SerializeField] Image highlightLayer;
-#pragma warning restore 0649
+        #pragma warning restore 0649
 
         public SpriteType spriteType { get; private set; }
         public bool hasStages = false;
@@ -146,6 +151,15 @@ namespace Hyperbyte
             highlightLayer.enabled = false;
         }
 
+        public void PlaceDiamond()
+        {
+            thisCollider.enabled = false;
+            isFilled = false;
+            isAvailable = false; 
+            hasDiamond = true;
+            
+        }
+        
         /// <summary>
         /// Places block from the block shape. Typically will be called during gameplay.
         /// </summary>
@@ -208,12 +222,25 @@ namespace Hyperbyte
             assignedSpriteTag = spriteTag;
         }
 
+        public void ClearDiamond()
+        {
+            thisCollider.enabled = true;
+            isFilled = true;
+            isAvailable = true; 
+            hasDiamond = false;
+        }
+        
         /// <summary>
         /// Clears block. Will be called when line containing this block will get completed. This is typical animation effect of how completed block shoudl disappear.
         /// references - 159, 166, 500 (default code)
         /// </summary>
         public void Clear()
         {
+            if (hasDiamond)
+            {
+                return;
+            }
+            
             transform.GetComponent<Image>().color = new Color(1, 1, 1, 0);
             
             // BlockImage will scale down to 0 in 0.35 seconds. and will reset to scale 1 on animation completion.
@@ -396,7 +423,12 @@ namespace Hyperbyte
                         assignedSpriteTag = spriteType.ToString();
                     }
                     break;
-
+            
+                case SpriteType.Diamond:
+                    hasDiamond = true;
+                    PlaceBlock(spriteType.ToString());
+                    break;
+                
                 default:
                     if (hasStages)
                     {
@@ -480,6 +512,17 @@ namespace Hyperbyte
                     }
                     break;
                 
+                case SpriteType.Diamond:
+                    GameObject diamondObject = Instantiate(GamePlay.Instance.diamondPrefab, gameObject.transform.position,
+                        Quaternion.identity, GamePlay.Instance.boardGenerator.transform);
+                    
+                    // diamondObject.transform.localScale = Vector3.one;
+                    Diamond diamond = diamondObject.GetComponent<Diamond>();
+                
+                    diamond.Initialize(this);
+                    // diamond.enabled = false;
+                    PlaceDiamond();
+                    break;
                 // case SpriteType.Panda:
                 //     if (hasStages)
                 //     {

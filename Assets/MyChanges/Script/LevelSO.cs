@@ -83,16 +83,6 @@ public enum SpriteType
 }
 
 [System.Serializable]
-public enum Stages
-{
-    Stage1 = 1,
-    Stage2 = 2,
-    Stage3 = 3,
-    Stage4 = 4,
-    Stage5 = 5,
-}
-
-[System.Serializable]
 public class BlockShape
 {
     public BlockShapeInfo[] StandardBlockShape;

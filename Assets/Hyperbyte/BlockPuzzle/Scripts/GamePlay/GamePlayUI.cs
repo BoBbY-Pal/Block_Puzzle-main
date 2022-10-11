@@ -67,6 +67,9 @@ namespace Hyperbyte
 
         //Event action for game pause callback.
         public static event Action<GameMode, bool> OnGamePausedEvent;
+        
+        //Event action for row completed.
+        public event Action OnRowCompletedEvent; 
         #endregion 
 
         // Total lines clear during gameplay.
@@ -364,7 +367,12 @@ namespace Hyperbyte
                 UIController.Instance.pauseGameScreen.Activate();
             }
         }
-
+        
+        public void OnRowCompleted()
+        {
+            OnRowCompletedEvent?.Invoke();
+        }
+        
         /// <summary>
         /// Will be called on game over. 
         /// </summary>

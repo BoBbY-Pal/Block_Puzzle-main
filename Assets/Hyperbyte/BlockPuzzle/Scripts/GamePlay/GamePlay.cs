@@ -13,6 +13,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Hyperbyte.Utils;
 using UnityEngine;
 
@@ -32,6 +33,10 @@ namespace Hyperbyte
         public GameObject bombTemplate;
         #endregion
 
+        public GameObject diamondPrefab;
+
+        public bool isBoardReady = false;
+        
         //List of all Blocks in Row X Column format.
         [System.NonSerialized] public List<List<Block>> allRows = new List<List<Block>>();
         [System.NonSerialized] public List<List<Block>> allColumns = new List<List<Block>>();
@@ -117,6 +122,8 @@ namespace Hyperbyte
                  }
                  allColumns.Add(thisColumn);
             }
+
+            isBoardReady = true;
         }
 
         /// <summary>
@@ -126,7 +133,7 @@ namespace Hyperbyte
         {
             foreach (int rowId in rowIds)
             {
-                StartCoroutine(ClearAllBlocks(GetEntireRow(rowId)));
+                ClearAllBlocks(GetEntireRow(rowId));
             }
             GamePlayUI.Instance.totalLinesCompleted += rowIds.Count;
         }
@@ -138,7 +145,7 @@ namespace Hyperbyte
         {
             foreach (int columnId in columnIds)
             {
-                StartCoroutine(ClearAllBlocks(GetEntirColumn(columnId)));
+                ClearAllBlocks(GetEntirColumn(columnId));
             }
             GamePlayUI.Instance.totalLinesCompleted += columnIds.Count;
         }
@@ -146,18 +153,19 @@ namespace Hyperbyte
         #region My Changes
         public void ClearRow(int rowId)
         {
-            StartCoroutine(ClearAllBlocks(GetEntireRow(rowId)));
+            ClearAllBlocks(GetEntireRow(rowId));
         }
 
         public void ClearColoum(int coloumId)
         {
-            StartCoroutine(ClearAllBlocks(GetEntirColumn(coloumId)));
+            ClearAllBlocks(GetEntirColumn(coloumId));
         }
         #endregion
         /// <summary>
         /// Clears all given blocks from the board. On Completion state of block will be empty.
         /// </summary>
-        IEnumerator ClearAllBlocks(List<Block> allBlocks)
+        
+        public async void ClearAllBlocks(List<Block> allBlocks)
         {
             bool clear = false;
             foreach(Block block in allBlocks)
@@ -175,31 +183,52 @@ namespace Hyperbyte
                     continue;
                 }
                 block.ClearBlock();
-                yield return new WaitForSeconds(0.03F);
+                await Task.Delay(System.TimeSpan.FromSeconds(0.03f));
             }
-
-            /*
-            //Below calculation is done so blocks starts clearing from center to end on both sides.
-            int middleIndex = (allBlocks.Count % 2 == 0) ? (allBlocks.Count / 2) : ((allBlocks.Count / 2) + 1);
-            int leftIndex = (middleIndex - 1);
-            int rightIndex = middleIndex;
-            int totalBlocks = allBlocks.Count;
-
-            for (int i = 0; i < middleIndex; i++, leftIndex--, rightIndex++)
-            {
-                if (leftIndex >= 0)
-                {
-                    allBlocks[leftIndex].Clear();
-                }
-                if (rightIndex < totalBlocks)
-                {
-                    allBlocks[rightIndex].Clear();
-                }
-                yield return new WaitForSeconds(0.03F);
-            }
-            */
-            yield return 0;
         }
+//         IEnumerator ClearAllBlocks(List<Block> allBlocks)
+//         {
+//             bool clear = false;
+//             foreach(Block block in allBlocks)
+//             {
+//                 if(block.spriteType == SpriteType.MilkBottle)
+//                 {
+//                     // MilkShop block clear only one block at a time
+//                     if(!clear)
+//                     {
+//                         block.ClearBlock();
+//                         clear = true;
+//                         continue;
+//                     }
+//                     block.ChangeBlockImage();
+//                     continue;
+//                 }
+//                 block.ClearBlock();
+//                 yield return new WaitForSeconds(0.03F);
+//             }
+//
+//             /*
+//             //Below calculation is done so blocks starts clearing from center to end on both sides.
+//             int middleIndex = (allBlocks.Count % 2 == 0) ? (allBlocks.Count / 2) : ((allBlocks.Count / 2) + 1);
+//             int leftIndex = (middleIndex - 1);
+//             int rightIndex = middleIndex;
+//             int totalBlocks = allBlocks.Count;
+//
+//             for (int i = 0; i < middleIndex; i++, leftIndex--, rightIndex++)
+//             {
+//                 if (leftIndex >= 0)
+//                 {
+//                     allBlocks[leftIndex].Clear();
+//                 }
+//                 if (rightIndex < totalBlocks)
+//                 {
+//                     allBlocks[rightIndex].Clear();
+//                 }
+//                 yield return new WaitForSeconds(0.03F);
+//             }
+//             */
+//             yield return 0;
+//         }
 
         /// <summary>
         /// Returns all blocks from the given row.
