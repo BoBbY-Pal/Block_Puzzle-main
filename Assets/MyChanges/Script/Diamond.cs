@@ -30,24 +30,24 @@ namespace MyChanges.Script
             int columnSize = (int)boardSize;
         }
 
-        private void Update()
-        {
-
-            if (!GamePlay.Instance.isBoardReady)
-            {
-                return;
-            }
-            else
-            {
-                Block block = GetHittingBlock(transform);
-
-                if (block != null )
-                {
-
-                    StartCoroutine(Drop(block));
-                }
-            }
-        }
+        // private void Update()
+        // {
+        //
+        //     if (!GamePlay.Instance.isBoardReady)
+        //     {
+        //         return;
+        //     }
+        //     else
+        //     {
+        //         Block block = GetHittingBlock(transform);
+        //
+        //         if (block != null )
+        //         {
+        //
+        //             StartCoroutine(Drop(block));
+        //         }
+        //     }
+        // }
         
         Block GetHittingBlock(Transform draggingBlock)
         {
@@ -64,49 +64,56 @@ namespace MyChanges.Script
             // _columnId = columnId;
             // _rowId = rowId;
             currentBlock = block;
+            
         }
         
         private void CheckDiamondCanBeDrop()
         {
+            StartCoroutine(Drop());
+            float time = 0;
+            while (time < 50)
+            {
+                time += Time.deltaTime;
+                
+            }
+            
             canDrop = true;
+                
             // var row = GamePlay.Instance.allRows[currentBlock.RowId+1];
-            //     
-            //     Block block = row[currentBlock.ColumnId];
-            //     if (block.isFilled == false)
-            //     {
-            //         Drop(block);
-            //     }
-            //     
-            //     
-            //
-            //     return;
-
+            // Block block = row[currentBlock.ColumnId];
+            // if (block.isFilled == false)
+            // {
+            //     StartCoroutine(Drop());
+            // }
         }
 
-        private bool CanDrop()
+        private void CanDrop()
         {
             var row = GamePlay.Instance.allRows[currentBlock.RowId+1];
                 
             Block block = row[currentBlock.ColumnId];
-            if (block.isFilled == false) 
-            { 
-                // Drop(block);
-                return true;
+            if (block.isFilled == false)
+            {
+                StartCoroutine(Drop());
             }
-                
-                
-                
-            return false;
         }
 
-        private IEnumerator Drop(Block block)
+        private IEnumerator Drop()
         {
+            var row = GamePlay.Instance.allRows[currentBlock.RowId+1];
+            Block block = row[currentBlock.ColumnId];
+            if (!block.isFilled == false)
+            {
+                yield return 0;
+            }
+            
+            
             canDrop = false;
             float time = 0;
             
-            while (time < 0.20f)
+            while (time < 0.40f)
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.01f);
                 time += Time.deltaTime;
                 transform.position = Vector3.Lerp(transform.position, block.transform.position, time);
             }
@@ -115,11 +122,8 @@ namespace MyChanges.Script
             currentBlock.ClearDiamond();
             currentBlock = block;
             currentBlock.PlaceDiamond();
-            // canDrop = CanDrop();
             
-           
-            
-            // transform.position = block.transform.position;
+            CanDrop();
         }
     }
 }

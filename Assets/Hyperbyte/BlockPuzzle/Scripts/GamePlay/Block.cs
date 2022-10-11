@@ -157,7 +157,7 @@ namespace Hyperbyte
             isFilled = false;
             isAvailable = false; 
             hasDiamond = true;
-            
+            Debug.Log(name);
         }
         
         /// <summary>
