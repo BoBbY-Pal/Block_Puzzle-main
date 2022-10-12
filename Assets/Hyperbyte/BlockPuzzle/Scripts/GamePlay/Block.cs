@@ -12,12 +12,9 @@
 // THE SOFTWARE.
 
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using Hyperbyte.Utils;
 using Hyperbyte.UITween;
-using MyChanges.Script;
-using Unity.VisualScripting;
 
 namespace Hyperbyte
 {
@@ -151,15 +148,6 @@ namespace Hyperbyte
             highlightLayer.enabled = false;
         }
 
-        public void PlaceDiamond()
-        {
-            thisCollider.enabled = false;
-            isFilled = false;
-            isAvailable = false; 
-            hasDiamond = true;
-            Debug.Log(name);
-        }
-        
         /// <summary>
         /// Places block from the block shape. Typically will be called during gameplay.
         /// </summary>
@@ -222,14 +210,6 @@ namespace Hyperbyte
             assignedSpriteTag = spriteTag;
         }
 
-        public void ClearDiamond()
-        {
-            thisCollider.enabled = true;
-            isFilled = true;
-            isAvailable = true; 
-            hasDiamond = false;
-        }
-        
         /// <summary>
         /// Clears block. Will be called when line containing this block will get completed. This is typical animation effect of how completed block shoudl disappear.
         /// references - 159, 166, 500 (default code)
@@ -240,7 +220,6 @@ namespace Hyperbyte
             {
                 return;
             }
-            
             transform.GetComponent<Image>().color = new Color(1, 1, 1, 0);
             
             // BlockImage will scale down to 0 in 0.35 seconds. and will reset to scale 1 on animation completion.
@@ -425,8 +404,6 @@ namespace Hyperbyte
                     break;
             
                 case SpriteType.Diamond:
-                    hasDiamond = true;
-                    PlaceBlock(spriteType.ToString());
                     break;
                 
                 default:
@@ -513,15 +490,11 @@ namespace Hyperbyte
                     break;
                 
                 case SpriteType.Diamond:
-                    GameObject diamondObject = Instantiate(GamePlay.Instance.diamondPrefab, gameObject.transform.position,
-                        Quaternion.identity, GamePlay.Instance.boardGenerator.transform);
+                    GameObject diamondObject = Instantiate(GamePlay.Instance.diamondPrefab, transform.position,
+                                                            Quaternion.identity, GamePlay.Instance.boardGenerator.transform);
                     
-                    // diamondObject.transform.localScale = Vector3.one;
                     Diamond diamond = diamondObject.GetComponent<Diamond>();
-                
                     diamond.Initialize(this);
-                    // diamond.enabled = false;
-                    PlaceDiamond();
                     break;
                 // case SpriteType.Panda:
                 //     if (hasStages)

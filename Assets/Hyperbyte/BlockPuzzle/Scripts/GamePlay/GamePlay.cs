@@ -183,6 +183,7 @@ namespace Hyperbyte
                     continue;
                 }
                 block.ClearBlock();
+                GamePlayUI.Instance.OnRowCompleted();
                 await Task.Delay(System.TimeSpan.FromSeconds(0.03f));
             }
         }

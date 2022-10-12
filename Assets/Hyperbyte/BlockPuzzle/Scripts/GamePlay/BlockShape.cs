@@ -428,7 +428,6 @@ namespace Hyperbyte
                     if (completedRows.Count > 0)
                     {
                         GamePlay.Instance.ClearRows(completedRows);
-                        GamePlayUI.Instance.OnRowCompleted();
                     }
 
                     // Will clear all columns that completed by placing current shape.

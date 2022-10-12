@@ -1,129 +1,90 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Hyperbyte;
 using UnityEngine;
-using UnityEngine.UI;
 
 
-namespace MyChanges.Script
+public class Diamond : MonoBehaviour
 {
-    public class Diamond : MonoBehaviour
+    public Block currentBlock;
+    private int rowSize;
+    private int columnSize;
+    private void OnEnable()
     {
-        // private int _columnId;
-        // int _rowId;
+        GamePlayUI.Instance.OnRowCompletedEvent += CheckDiamondCanBeDrop;
+    }
+    private void OnDisable()
+    {
+        GamePlayUI.Instance.OnRowCompletedEvent -= CheckDiamondCanBeDrop;
+    }
+    private void Start()
+    {
+        BoardSize boardSize = GamePlayUI.Instance.GetBoardSize();
+        rowSize = (int)boardSize;
+        columnSize = (int)boardSize;
+        StartCoroutine(Drop());
+    }
 
-        public Block currentBlock;
-        public bool canDrop;
-        private void OnEnable()
-        {
-            GamePlayUI.Instance.OnRowCompletedEvent += CheckDiamondCanBeDrop;
-        }
-        private void OnDisable()
-        {
-            GamePlayUI.Instance.OnRowCompletedEvent -= CheckDiamondCanBeDrop;
-        }
-        private void Start()
-        {
-            BoardSize boardSize = GamePlayUI.Instance.GetBoardSize();
+    public void Initialize(Block block)
+    {
+        currentBlock = block;
+        PlaceDiamond();
+    }
+    
+    private void CheckDiamondCanBeDrop()
+    {
+        StartCoroutine(Drop());
+    }
 
-            int rowSize = (int)boardSize;
-            int columnSize = (int)boardSize;
+    private IEnumerator Drop()
+    {
+        var row = GamePlay.Instance.allRows[currentBlock.RowId+1];
+        Block block = row[currentBlock.ColumnId];
+        if (block.isFilled)
+        {
+            yield break;
         }
 
-        // private void Update()
-        // {
-        //
-        //     if (!GamePlay.Instance.isBoardReady)
-        //     {
-        //         return;
-        //     }
-        //     else
-        //     {
-        //         Block block = GetHittingBlock(transform);
-        //
-        //         if (block != null )
-        //         {
-        //
-        //             StartCoroutine(Drop(block));
-        //         }
-        //     }
-        // }
-        
-        Block GetHittingBlock(Transform draggingBlock)
+        float time = 0;
+        while (time < 0.20f)
         {
-            RaycastHit2D hit = Physics2D.Raycast(draggingBlock.position, Vector2.down, .5f);
-            
-            if (hit.collider != null && hit.collider.GetComponent<Block>() != null)
-            {
-                return hit.collider.GetComponent<Block>();
-            }
-            return null;
-        }
-        public void Initialize(Block block)
-        {
-            // _columnId = columnId;
-            // _rowId = rowId;
-            currentBlock = block;
-            
+            yield return new WaitForSeconds(0.01f);
+            time += Time.deltaTime;
+            transform.position = Vector3.Lerp(transform.position, block.transform.position, time);
         }
         
-        private void CheckDiamondCanBeDrop()
+        ClearDiamond();
+        currentBlock = block;
+        PlaceDiamond();
+        
+
+        if (currentBlock.RowId == rowSize-1)
         {
-            StartCoroutine(Drop());
-            float time = 0;
-            while (time < 50)
-            {
-                time += Time.deltaTime;
-                
-            }
-            
-            canDrop = true;
-                
-            // var row = GamePlay.Instance.allRows[currentBlock.RowId+1];
-            // Block block = row[currentBlock.ColumnId];
-            // if (block.isFilled == false)
-            // {
-            //     StartCoroutine(Drop());
-            // }
+            Debug.Log("Game Won");
+            TargetController.Instance.UpdateTargetText(currentBlock, SpriteType.Diamond);
+            ClearDiamond();
+            Destroy(gameObject);
+            yield break;
         }
 
-        private void CanDrop()
-        {
-            var row = GamePlay.Instance.allRows[currentBlock.RowId+1];
-                
-            Block block = row[currentBlock.ColumnId];
-            if (block.isFilled == false)
-            {
-                StartCoroutine(Drop());
-            }
-        }
+        StartCoroutine(Drop());
+    }
+    
+    private void PlaceDiamond()
+    {
+        currentBlock.thisCollider.enabled = false;
+        currentBlock.isFilled = false;
+        currentBlock.isAvailable = false; 
+        currentBlock.hasDiamond = true;
+        currentBlock.assignedSpriteTag = SpriteType.Diamond.ToString();
+    }
 
-        private IEnumerator Drop()
-        {
-            var row = GamePlay.Instance.allRows[currentBlock.RowId+1];
-            Block block = row[currentBlock.ColumnId];
-            if (!block.isFilled == false)
-            {
-                yield return 0;
-            }
-            
-            
-            canDrop = false;
-            float time = 0;
-            
-            while (time < 0.40f)
-            {
-                yield return new WaitForSeconds(0.01f);
-                time += Time.deltaTime;
-                transform.position = Vector3.Lerp(transform.position, block.transform.position, time);
-            }
-            
-            currentBlock.hasDiamond = false;
-            currentBlock.ClearDiamond();
-            currentBlock = block;
-            currentBlock.PlaceDiamond();
-            
-            CanDrop();
-        }
+    private void ClearDiamond()
+    {
+        currentBlock.thisCollider.enabled = true;
+        currentBlock.isFilled = false;
+        currentBlock.isAvailable = true; 
+        currentBlock.hasDiamond = false;
+        currentBlock.assignedSpriteTag = currentBlock.defaultSpriteTag;
+        currentBlock.SetBlockSpriteType(SpriteType.Empty);
     }
 }
