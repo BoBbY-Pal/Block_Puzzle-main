@@ -57,10 +57,12 @@ namespace Hyperbyte
         private int _columnId;
 
         // Block is filled  with current playing block shape.
-        [System.NonSerialized] public bool isFilled = false;
+        // [System.NonSerialized] 
+        public bool isFilled = false;
 
         // Block is available to place block shape or not.
-        [System.NonSerialized] public bool isAvailable = true;
+        // [System.NonSerialized] 
+        public bool isAvailable = true;
 
         #region Blast Mode Specific
         // Whether Block contains bomb. Applied only to time mode.
@@ -138,7 +140,7 @@ namespace Hyperbyte
             if (!isAvailable)
             {
                 blockImage.sprite = defaultSprite;
-                isFilled = true;
+                // isFilled = true;
             }
             else
             {
@@ -216,10 +218,7 @@ namespace Hyperbyte
         /// </summary>
         public void Clear()
         {
-            if (hasDiamond)
-            {
-                return;
-            }
+           
             transform.GetComponent<Image>().color = new Color(1, 1, 1, 0);
             
             // BlockImage will scale down to 0 in 0.35 seconds. and will reset to scale 1 on animation completion.
@@ -402,10 +401,7 @@ namespace Hyperbyte
                         assignedSpriteTag = spriteType.ToString();
                     }
                     break;
-            
-                case SpriteType.Diamond:
-                    break;
-                
+
                 default:
                     if (hasStages)
                     {
