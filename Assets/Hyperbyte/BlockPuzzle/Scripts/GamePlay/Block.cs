@@ -496,20 +496,7 @@ namespace Hyperbyte
                     Diamond diamond = diamondObject.GetComponent<Diamond>();
                     diamond.Initialize(this);
                     break;
-                // case SpriteType.Panda:
-                //     if (hasStages)
-                //     {
-                //         this.hasStages = hasStages;
-                //         this.stage = stage;
-                //         PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()+ "Stage" + this.stage),
-                //                 spriteType.ToString()+ "Stage" + this.stage);
-                //     }
-                //     else
-                //     {
-                //         PlaceBlock(ThemeManager.Instance.GetBlockSpriteWithTag(spriteType.ToString()), spriteType.ToString());
-                //     }
-                //     break;
-                
+
                 default:
                     if (hasStages)
                     {

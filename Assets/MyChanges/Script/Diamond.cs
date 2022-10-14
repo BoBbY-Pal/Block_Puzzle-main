@@ -2,7 +2,6 @@
 using Hyperbyte;
 using UnityEngine;
 
-
 public class Diamond : MonoBehaviour
 {
     public Block currentBlock;
@@ -59,7 +58,6 @@ public class Diamond : MonoBehaviour
 
         if (currentBlock.RowId == rowSize-1)
         {
-            Debug.Log("Game Won");
             TargetController.Instance.UpdateTargetText(currentBlock, SpriteType.Diamond);
             ClearDiamond();
             Destroy(gameObject);
