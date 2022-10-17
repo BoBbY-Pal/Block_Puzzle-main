@@ -11,6 +11,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,14 @@ namespace Hyperbyte
         // Parent inside which all blocks will be generated. Typically root of block grid.
         [SerializeField] GameObject blockRoot;
 
+        private Block[,] blockGrid;
+        
+        /// <summary>
+        /// Row/Column which contains milk shop, this will be used to check whether that row has milkshop.
+        /// </summary>
+        public static Dictionary<int, MilkShop> rowMilkShopData,columnMilkShopData;
+        
+
         /// <summary>
         /// Generates the block grid based on game settings and will also set progress from previoius session if any.
         /// </summary>
@@ -38,7 +47,7 @@ namespace Hyperbyte
 
             int rowSize = (int)boardSize;
             int columnSize = (int)boardSize;
-
+            blockGrid = new Block[rowSize, columnSize];
             // Fetched the size of block that should be used.
             float blockSize = GamePlayUI.Instance.currentModeSettings.blockSize;
 
@@ -80,23 +89,23 @@ namespace Hyperbyte
                     block.gameObject.SetActive(true);
                     block.SetBlockLocation(row, column);
                     blockRow.Add(block);
+                    blockGrid[row, column] = block;
                     block.assignedSpriteTag = block.defaultSpriteTag;
 
                     // My Code
-                    #region Level Modification - My Changes
-                    if (activeLevel.rows[row].coloum[column].spriteType != SpriteType.Empty)
-                    {
-                        bool hasStages = activeLevel.rows[row].coloum[column].hasStages;
-                        int stage = activeLevel.rows[row].coloum[column].stage;
-                        SpriteType spriteType = activeLevel.rows[row].coloum[column].spriteType;
-                        
-                        blockElement.GetComponent<Block>().SetBlock(spriteType, hasStages, stage);
-                    }
-                    #endregion
+                    // #region Level Modification - My Changes
+                    // if (activeLevel.rows[row].coloum[column].spriteType != SpriteType.Empty)
+                    // {
+                    //     bool hasStages = activeLevel.rows[row].coloum[column].hasStages;
+                    //     int stage = activeLevel.rows[row].coloum[column].stage;
+                    //     SpriteType spriteType = activeLevel.rows[row].coloum[column].spriteType;
+                    //     
+                    //     blockElement.GetComponent<Block>().SetBlock(spriteType, hasStages, stage);
+                    // }
+                    // #endregion
                 }
                 currentPositionX = startPointX;
                 currentPositionY -= (blockSize + blockSpace);
-
                 GamePlayUI.Instance.gamePlay.allRows.Add(blockRow);
             }
 
@@ -130,7 +139,51 @@ namespace Hyperbyte
                 #endregion
             }
             */
+            CreateSpecialBlock(rowSize, columnSize, activeLevel);
             GamePlay.Instance.OnBoardGridReady();
+        }
+
+        private void CreateSpecialBlock(int rowSize, int columnSize, Level activeLevel)
+        {
+            for (int row = 0; row < rowSize; row++)
+            {
+                for (int column = 0; column < columnSize; column++)
+                {
+                    #region Level Modification - My Changes
+                    if (activeLevel.rows[row].coloum[column].spriteType != SpriteType.Empty)
+                    {
+                        bool hasStages = activeLevel.rows[row].coloum[column].hasStages;
+                        int stage = activeLevel.rows[row].coloum[column].stage;
+                        SpriteType spriteType = activeLevel.rows[row].coloum[column].spriteType;
+                        
+                        blockGrid[row, column].SetBlock(spriteType, hasStages, stage);
+                    }
+                    #endregion
+                }
+            }
+            // if (block.spriteType != SpriteType.Empty)
+            // { 
+            //     bool hasStages = block.hasStages;
+            //     int stage = block.stage;
+            //     SpriteType spriteType = block.spriteType;
+            //         
+            //     block.GetComponent<Block>().SetBlock(spriteType, hasStages, stage);
+            // }
+            // (int j = 0; j < blockGrid.Count; j++)
+            // {
+            //     
+            //     #region Level Modification - My Changes
+            //     if (blockGrid[j].spriteType != SpriteType.Empty)
+            //     { 
+            //         bool hasStages = activeLevel.rows[row].coloum[column].hasStages;
+            //         int stage = activeLevel.rows[row].coloum[column].stage;
+            //         SpriteType spriteType = activeLevel.rows[row].coloum[column].spriteType;
+            //         
+            //         blockElement.GetComponent<Block>().SetBlock(spriteType, hasStages, stage);
+            //     }
+            //     #endregion
+            // }
+           
         }
 
         /// <summary>

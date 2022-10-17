@@ -33,10 +33,9 @@ namespace Hyperbyte
         public GameObject bombTemplate;
         #endregion
 
-        public GameObject diamondPrefab;
+        public Diamond diamondPrefab;
+        public MilkShop milkShopPrefab;
 
-        public bool isBoardReady = false;
-        
         //List of all Blocks in Row X Column format.
         [System.NonSerialized] public List<List<Block>> allRows = new List<List<Block>>();
         [System.NonSerialized] public List<List<Block>> allColumns = new List<List<Block>>();
@@ -52,6 +51,7 @@ namespace Hyperbyte
 
         // Saves highlighting columns as cached to reduce iterations . Will keep updating runtime. 
         List<int> cachedHighlightingColumns = new List<int>();
+        
 
         #region Blast Mode Specific
         /// <summary>
@@ -122,8 +122,6 @@ namespace Hyperbyte
                  }
                  allColumns.Add(thisColumn);
             }
-
-            isBoardReady = true;
         }
 
         /// <summary>
@@ -131,8 +129,15 @@ namespace Hyperbyte
         /// </summary>
         public void ClearRows(List<int> rowIds)
         {
+            MilkShop milkShop;
             foreach (int rowId in rowIds)
             {
+                
+                if (BoardGenerator.rowMilkShopData.TryGetValue(rowId, out milkShop))
+                {
+                    milkShop.OnMilkShopFound();
+                }
+                // StartCoroutine(ClearAllBlocks(GetEntireRow(rowId)));
                 ClearAllBlocks(GetEntireRow(rowId));
             }
             GamePlayUI.Instance.totalLinesCompleted += rowIds.Count;
@@ -143,9 +148,15 @@ namespace Hyperbyte
         /// </summary>
         public void ClearColumns(List<int> columnIds)
         {
+            MilkShop milkShop;
             foreach (int columnId in columnIds)
             {
+                if (BoardGenerator.columnMilkShopData.TryGetValue(columnId, out milkShop))
+                {
+                    milkShop.OnMilkShopFound();
+                }
                 ClearAllBlocks(GetEntirColumn(columnId));
+                // StartCoroutine(ClearAllBlocks(GetEntirColumn(columnId)));
             }
             GamePlayUI.Instance.totalLinesCompleted += columnIds.Count;
         }
@@ -170,7 +181,7 @@ namespace Hyperbyte
             bool clear = false;
             foreach(Block block in allBlocks)
             {
-                if(block.spriteType == SpriteType.MilkBottle)
+                if(block.spriteType == SpriteType.MilkShop)
                 {
                     // MilkShop block clear only one block at a time
                     if(!clear)

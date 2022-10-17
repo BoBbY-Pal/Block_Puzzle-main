@@ -6,7 +6,6 @@ public class Diamond : MonoBehaviour
 {
     public Block currentBlock;
     private int rowSize;
-    private int columnSize;
     private void OnEnable()
     {
         GamePlayUI.Instance.OnRowCompletedEvent += CheckDiamondCanBeDrop;
@@ -19,7 +18,6 @@ public class Diamond : MonoBehaviour
     {
         BoardSize boardSize = GamePlayUI.Instance.GetBoardSize();
         rowSize = (int)boardSize;
-        columnSize = (int)boardSize;
         StartCoroutine(Drop());
     }
 
@@ -58,7 +56,7 @@ public class Diamond : MonoBehaviour
 
         if (currentBlock.RowId == rowSize-1)
         {
-            TargetController.Instance.UpdateTargetText(currentBlock, SpriteType.Diamond);
+            TargetController.Instance.UpdateTargetText(transform, SpriteType.Diamond);
             ClearDiamond();
             Destroy(gameObject);
             yield break;
@@ -74,6 +72,7 @@ public class Diamond : MonoBehaviour
         currentBlock.isAvailable = false; 
         currentBlock.hasDiamond = true;
         currentBlock.assignedSpriteTag = SpriteType.Diamond.ToString();
+        currentBlock.SetBlockSpriteType(SpriteType.Diamond);
     }
 
     private void ClearDiamond()

@@ -23,7 +23,7 @@ public class TargetController : Singleton<TargetController>
         }
     }
 
-    public void UpdateTargetText(Block block, SpriteType spriteType)
+    public void UpdateTargetText(Transform block, SpriteType spriteType)
     {
         foreach(Target target in targetInstanceHolder)
         {
@@ -33,16 +33,17 @@ public class TargetController : Singleton<TargetController>
                 break;
             }
         }
+        
         /*
         if(!block.isAvailable || spriteType == SpriteType.Bubble)
         {
             PlayBlockBreakEffect(block.gameObject.transform);
         }
         */
-        if (block.blockImage.enabled == true)
-        {
-            PlayBlockBreakEffect(block.gameObject.transform);
-        }
+        // if (block.blockImage.enabled == true)
+        // {
+        //     PlayBlockBreakEffect(block.gameObject.transform);
+        // }
     }
 
     private void PlayBlockBreakEffect(Transform block)

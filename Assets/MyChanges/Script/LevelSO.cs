@@ -79,6 +79,7 @@ public enum SpriteType
     Panda,
     MagnetWithIceAndRed,
     Diamond,
+    MilkShop
     
 }
 

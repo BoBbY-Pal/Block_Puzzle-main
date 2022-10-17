@@ -15,6 +15,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Hyperbyte.Utils;
 using Hyperbyte.UITween;
+using Unity.Mathematics;
 
 namespace Hyperbyte
 {
@@ -75,6 +76,9 @@ namespace Hyperbyte
         // Whether Block contains diamond.
         [System.NonSerialized] public bool hasDiamond = false;
         
+        // Whether Block contains diamond.
+        [System.NonSerialized] public bool hasMilkShop = false;
+        
         // Default sprite tag on the block. Will update runtime.
         public string defaultSpriteTag;
 
@@ -98,6 +102,8 @@ namespace Hyperbyte
         public SpriteType spriteType { get; private set; }
         public bool hasStages = false;
         public int stage = 0;
+        
+
         /// <summary>
 		/// Awake is called when the script instance is being loaded.
 		/// </summary>
@@ -218,7 +224,6 @@ namespace Hyperbyte
         /// </summary>
         public void Clear()
         {
-           
             transform.GetComponent<Image>().color = new Color(1, 1, 1, 0);
             
             // BlockImage will scale down to 0 in 0.35 seconds. and will reset to scale 1 on animation completion.
@@ -241,12 +246,14 @@ namespace Hyperbyte
                 blockImage.enabled = false;
             });
 
-
-            isFilled = false;
-            isAvailable = true;
-            thisCollider.enabled = true;
-            assignedSpriteTag = defaultSpriteTag;
-            SetBlockSpriteType(SpriteType.Empty);
+            if (!hasMilkShop)
+            {
+                isFilled = false;
+                isAvailable = true;
+                thisCollider.enabled = true;
+                assignedSpriteTag = defaultSpriteTag;
+                SetBlockSpriteType(SpriteType.Empty);
+            }
 
             #region Blast Mode Specific
             if (isBomb)
@@ -334,32 +341,32 @@ namespace Hyperbyte
             {
                 case SpriteType.RedWithIce:
                     blockLayerImage1.enabled = false;
-                    TargetController.Instance.UpdateTargetText(this, spriteType);
+                    TargetController.Instance.UpdateTargetText(transform, spriteType);
                     PlaceBlock(SpriteType.Red.ToString());
                     SetBlockSpriteType(SpriteType.Red);
                     break;
 
                 case SpriteType.Bubble:
                     blockLayerImage1.enabled = false;
-                    TargetController.Instance.UpdateTargetText(this, spriteType);
+                    TargetController.Instance.UpdateTargetText(transform, spriteType);
                     Clear();
                     break;
 
                 case SpriteType.Hat:
-                    TargetController.Instance.UpdateTargetText(this, spriteType);
+                    TargetController.Instance.UpdateTargetText(transform, spriteType);
                     PlaceBlock(SpriteType.Hat.ToString());
                     break;
 
                 case SpriteType.Magnet:
                     blockLayerImage2.enabled = false;
-                    TargetController.Instance.UpdateTargetText(this, SpriteType.Magnet);
+                    TargetController.Instance.UpdateTargetText(transform, SpriteType.Magnet);
                     Clear();
                     break;
 
                 case SpriteType.MagnetWithYellowAndBubble:
                     blockLayerImage2.enabled = false;
                     blockLayerImage1.enabled = false;
-                    TargetController.Instance.UpdateTargetText(this, SpriteType.Bubble);
+                    TargetController.Instance.UpdateTargetText(transform, SpriteType.Bubble);
                     Clear();
                     break;
 
@@ -377,7 +384,7 @@ namespace Hyperbyte
                         }
                         else
                         {
-                            TargetController.Instance.UpdateTargetText(this, SpriteType.Ice);
+                            TargetController.Instance.UpdateTargetText(transform, SpriteType.Ice);
                             hasStages = false;
                             stage = 0;
                             blockLayerImage1.enabled = false;
@@ -391,7 +398,7 @@ namespace Hyperbyte
                     }
                     else
                     {
-                        TargetController.Instance.UpdateTargetText(this, SpriteType.Ice);
+                        TargetController.Instance.UpdateTargetText(transform, SpriteType.Ice);
                         blockLayerImage1.enabled = false;
                         Sprite blockImgSprite = ThemeManager.Instance.GetBlockSpriteWithTag(SpriteType.Red.ToString());
                         blockImage.sprite = blockImgSprite;
@@ -400,6 +407,10 @@ namespace Hyperbyte
                         Magnet.Instance.CheckForRowOrColoumClear(_rowId, _columnId);
                         assignedSpriteTag = spriteType.ToString();
                     }
+                    break;
+                
+                //Do Nothing in these cases
+                case SpriteType.Diamond:
                     break;
 
                 default:
@@ -415,7 +426,7 @@ namespace Hyperbyte
                         }
                         else
                         {
-                            TargetController.Instance.UpdateTargetText(this, spriteType);
+                            TargetController.Instance.UpdateTargetText(transform, spriteType);
                             hasStages = false;
                             stage = 0;
                             Clear();
@@ -423,7 +434,7 @@ namespace Hyperbyte
                     }
                     else
                     {
-                        TargetController.Instance.UpdateTargetText(this, spriteType);
+                        TargetController.Instance.UpdateTargetText(transform, spriteType);
                         Clear();
                     }
                     break;
@@ -486,13 +497,18 @@ namespace Hyperbyte
                     break;
                 
                 case SpriteType.Diamond:
-                    GameObject diamondObject = Instantiate(GamePlay.Instance.diamondPrefab, transform.position,
-                                                            Quaternion.identity, GamePlay.Instance.boardGenerator.transform);
-                    
-                    Diamond diamond = diamondObject.GetComponent<Diamond>();
+                    Diamond diamond = Instantiate(GamePlay.Instance.diamondPrefab, transform.position,
+                                                  Quaternion.identity, GamePlay.Instance.boardGenerator.transform);
                     diamond.Initialize(this);
                     break;
-
+                
+                case SpriteType.MilkShop:
+                    MilkShop milkShop = Instantiate(GamePlay.Instance.milkShopPrefab, transform.position,
+                                                            Quaternion.identity, GamePlay.Instance.boardGenerator.transform);
+                    milkShop.transform.localScale = Vector3.one;
+                    milkShop.gameObject.SetActive(true);
+                    milkShop.MarkOccupiedBlocksUnAvail(this);
+                    break;
                 default:
                     if (hasStages)
                     {
