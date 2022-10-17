@@ -71,14 +71,14 @@ namespace Hyperbyte
         
         // Instance on bomb on the block. 
         [System.NonSerialized] public Bomb thisBomb = null;
+        
+        // Instance of milk shop on the block. 
+        [System.NonSerialized] public MilkShop milkShop = null;
         #endregion
 
         // Whether Block contains diamond.
         [System.NonSerialized] public bool hasDiamond = false;
-        
-        // Whether Block contains diamond.
-        [System.NonSerialized] public bool hasMilkShop = false;
-        
+
         // Default sprite tag on the block. Will update runtime.
         public string defaultSpriteTag;
 
@@ -246,14 +246,14 @@ namespace Hyperbyte
                 blockImage.enabled = false;
             });
 
-            if (!hasMilkShop)
-            {
+            
                 isFilled = false;
                 isAvailable = true;
                 thisCollider.enabled = true;
+                milkShop = null;
                 assignedSpriteTag = defaultSpriteTag;
                 SetBlockSpriteType(SpriteType.Empty);
-            }
+            
 
             #region Blast Mode Specific
             if (isBomb)
@@ -504,11 +504,12 @@ namespace Hyperbyte
                 
                 case SpriteType.MilkShop:
                     MilkShop milkShop = Instantiate(GamePlay.Instance.milkShopPrefab, transform.position,
-                                                            Quaternion.identity, GamePlay.Instance.boardGenerator.transform);
+                                                            Quaternion.identity, GamePlay.Instance.transform);
                     milkShop.transform.localScale = Vector3.one;
                     milkShop.gameObject.SetActive(true);
-                    milkShop.MarkOccupiedBlocksUnAvail(this);
+                    StartCoroutine(milkShop.MarkOccupiedBlocksUnAvail(this));
                     break;
+                
                 default:
                     if (hasStages)
                     {

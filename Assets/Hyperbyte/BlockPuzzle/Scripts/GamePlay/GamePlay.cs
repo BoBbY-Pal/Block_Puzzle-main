@@ -129,15 +129,8 @@ namespace Hyperbyte
         /// </summary>
         public void ClearRows(List<int> rowIds)
         {
-            MilkShop milkShop;
             foreach (int rowId in rowIds)
             {
-                
-                if (BoardGenerator.rowMilkShopData.TryGetValue(rowId, out milkShop))
-                {
-                    milkShop.OnMilkShopFound();
-                }
-                // StartCoroutine(ClearAllBlocks(GetEntireRow(rowId)));
                 ClearAllBlocks(GetEntireRow(rowId));
             }
             GamePlayUI.Instance.totalLinesCompleted += rowIds.Count;
@@ -148,15 +141,9 @@ namespace Hyperbyte
         /// </summary>
         public void ClearColumns(List<int> columnIds)
         {
-            MilkShop milkShop;
             foreach (int columnId in columnIds)
             {
-                if (BoardGenerator.columnMilkShopData.TryGetValue(columnId, out milkShop))
-                {
-                    milkShop.OnMilkShopFound();
-                }
                 ClearAllBlocks(GetEntirColumn(columnId));
-                // StartCoroutine(ClearAllBlocks(GetEntirColumn(columnId)));
             }
             GamePlayUI.Instance.totalLinesCompleted += columnIds.Count;
         }
@@ -178,19 +165,26 @@ namespace Hyperbyte
         
         public async void ClearAllBlocks(List<Block> allBlocks)
         {
-            bool clear = false;
+            bool canClear = true;
+            int bottleCount = 0;
+            
             foreach(Block block in allBlocks)
             {
-                if(block.spriteType == SpriteType.MilkShop)
+                if(block.spriteType == SpriteType.MilkBottle)
                 {
-                    // MilkShop block clear only one block at a time
-                    if(!clear)
+                    if (bottleCount >= 2)
                     {
-                        block.ClearBlock();
-                        clear = true;
-                        continue;
+                        canClear = true;
+                        bottleCount = 0;
                     }
-                    block.ChangeBlockImage();
+                    
+                    // MilkShop block clear only one block at a time
+                    if(canClear)
+                    {
+                        block.milkShop.OnMilkShopFound();
+                        canClear = false;
+                    }
+                    bottleCount ++;
                     continue;
                 }
                 block.ClearBlock();

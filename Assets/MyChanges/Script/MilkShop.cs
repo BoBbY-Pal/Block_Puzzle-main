@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +7,14 @@ namespace Hyperbyte
 {
     public class MilkShop: MonoBehaviour
     {
+        [Tooltip("Delay time for bottle destruction.")]
+        [SerializeField] private float destroyTime;
+        
         // bottles that milk shop contains.
         public List<GameObject> bottles;
         
         // Grid's blocks that are occupied by the milk shop.
-        private List<Block> occupiedBlocks;
+        public List<Block> occupiedBlocks;
         
         //Event action for milk bottle callback.
         public event Action OnMilkShopFoundEvent;
@@ -23,20 +27,19 @@ namespace Hyperbyte
         private void OnDisable()
         {
             OnMilkShopFoundEvent -= CollectMilkBottle;
-            
         }
 
         // Blocks that are occupied by the milk shop will be marked as unavailable,
         // so that they can't be used for shape placing. 
-        public void MarkOccupiedBlocksUnAvail(Block rootBlock)
+        public IEnumerator MarkOccupiedBlocksUnAvail(Block rootBlock)
         {
+            yield return new WaitForSeconds(.5f);
+            
             List<Block> row = new List<Block>();
             row = GamePlay.Instance.allRows[rootBlock.RowId];
             List<Block> nextRow = new List<Block>();
             nextRow = GamePlay.Instance.allRows[rootBlock.RowId +1];
-            BoardGenerator.rowMilkShopData = new Dictionary<int, MilkShop>();
-            BoardGenerator.columnMilkShopData = new Dictionary<int, MilkShop>(); 
-            
+
             occupiedBlocks = new List<Block>
             {
                 rootBlock,
@@ -49,18 +52,11 @@ namespace Hyperbyte
             {
                 foreach (Block block in occupiedBlocks)
                 {
-                    block.GetComponent<Collider2D>().enabled = false;
+                    block.thisCollider.enabled = false;
                     block.isAvailable = false;
                     block.isFilled = true;
-                    block.hasMilkShop = true;
-
-                    if (!BoardGenerator.rowMilkShopData.ContainsKey(block.RowId) &&
-                        !BoardGenerator.columnMilkShopData.ContainsKey(block.ColumnId))
-                    {
-                        BoardGenerator.rowMilkShopData.Add(block.RowId, this);
-                        BoardGenerator.columnMilkShopData.Add(block.ColumnId, this);
-                    }
-                    
+                    block.milkShop = this;
+                    block.SetBlockSpriteType(SpriteType.MilkBottle);
                 }
             }
         }
@@ -73,18 +69,7 @@ namespace Hyperbyte
             {
                 foreach (Block block in occupiedBlocks)
                 {
-                    block.GetComponent<Collider2D>().enabled = true;
-                    block.isAvailable = true;
-                    block.isFilled = false;
-                    block.hasMilkShop = false;
-
-                    if (BoardGenerator.rowMilkShopData.ContainsKey(block.RowId) &&
-                        BoardGenerator.columnMilkShopData.ContainsKey(block.ColumnId))
-                    {
-                        
-                        BoardGenerator.rowMilkShopData.Remove(block.RowId);
-                        BoardGenerator.columnMilkShopData.Remove(block.ColumnId);
-                    }
+                    block.Clear();
                 }
             }
         }
@@ -103,7 +88,7 @@ namespace Hyperbyte
             GameObject bottle = bottles[0];
             bottles.RemoveAt(0); 
             
-            Destroy(bottle, .3f);
+            Destroy(bottle, destroyTime);
             TargetController.Instance.UpdateTargetText(bottle.transform, SpriteType.MilkBottle);
             if (bottles.Count <= 0)
             {
